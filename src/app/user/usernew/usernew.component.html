@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-sm-12">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" class="form-control" formControlName="name">
+                    </div>
+                    <span class="help-box" *ngIf="!userForm.get('name').valid && userForm.get('name').touched">Enter
+                        a valid
+                        projectname!</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="lastname">Lastname</label>
+                        <input id="lastname" type="text" class="form-control" formControlName="lastname">
+                    </div>
+                    <span class="help-box"
+                        *ngIf="!userForm.get('lastname').valid && userForm.get('lastname').touched">Enter
+                        a valid Lastname!</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="mail">Email</label>
+                        <input id="mail" type="email" class="form-control" formControlName="mail">
+                    </div>
+                    <span class="help-box" *ngIf="!userForm.get('mail').valid && userForm.get('mail').touched">Enter
+                        a valid Email!</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="dob">DOB</label>
+                        <input id="dob" type="date" class="form-control" formControlName="dob">
+                    </div>
+                    <span class="help-box" *ngIf="!userForm.get('dob').valid && userForm.get('dob').touched">Enter
+                        a valid Date!</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="phone">Phone no.</label>
+                        <input id="phone" type="number" class="form-control" formControlName="phone">
+                    </div>
+                    <span class="help-box" *ngIf="!userForm.get('phone').valid && userForm.get('phone').touched">Enter
+                        a valid Number!</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" type="number" class="form-control" rows="4"
+                            formControlName="address"></textarea>
+                    </div>
+                    <span class="help-box"
+                        *ngIf="!userForm.get('address').valid && userForm.get('address').touched">Enter
+                        a valid Address!</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="submit" [disabled]="!userForm.valid" class="btn btn-success ">Add user</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

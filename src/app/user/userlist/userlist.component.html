@@ -1,0 +1,40 @@
+<hr>
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-bordered caption-top">
+            <caption>List of users</caption>
+            <thead>
+                <tr>
+                    <th>Name<a class="btn btn-dark" (click)="sortName('name')">&uarr;</a><a class="btn btn-dark"
+                            (click)="sort_Name('name')">&darr;</a></th>
+
+                    <th>Lastname <a class="btn btn-dark" (click)="sortName('lastname')">&uarr;</a><a
+                            class="btn btn-dark" (click)="sort_Name('lastname')">&darr;</a></th>
+
+                    <th>Email<a class="btn btn-dark" (click)="sortName('mail')">&uarr;</a><a class="btn btn-dark"
+                            (click)="sort_Name('mail')">&darr;</a></th>
+
+                    <th>DOB<a (click)="sortDatebyDateMonthDesc()" class="btn btn-dark">&uarr;</a><a
+                            (click)="sort_DatebyDateMonthAsc()" class="btn btn-dark">&darr;</a></th>
+
+                    <th>Phone<a class="btn btn-dark" (click)="sortName('phone')">&uarr;</a><a class="btn btn-dark"
+                            (click)="sort_Name('phone')">&darr;</a></th>
+
+                    <th colspan="2">Address<a class="btn btn-dark" (click)="sortName('address')">&uarr;</a><a
+                            class="btn btn-dark" (click)="sort_Name('address')">&darr;</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users;let i = index">
+                    <td>{{user.name}}</td>
+                    <td>{{user.lastname}}</td>
+                    <td>{{user.mail}}</td>
+                    <td>{{user.dob}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.address}}</td>
+                    <td><button class="btn btn-danger" (click)="onDeleteUser(i)">delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
